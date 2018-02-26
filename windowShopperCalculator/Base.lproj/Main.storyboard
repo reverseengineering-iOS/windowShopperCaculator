@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-HeavyOblique</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -26,25 +31,26 @@
                                 <rect key="frame" x="130" y="55" width="115" height="115"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yiJ-bo-XIN" customClass="CustomTextField" customModule="windowShopperCalculator" customModuleProvider="target">
-                                <rect key="frame" x="24" y="215" width="327" height="30"/>
+                                <rect key="frame" x="24" y="215" width="327" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="wi5-L6-NYb"/>
+                                    <constraint firstAttribute="height" constant="40" id="wi5-L6-NYb"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AM5-44-GRR" customClass="CustomTextField" customModule="windowShopperCalculator" customModuleProvider="target">
-                                <rect key="frame" x="24" y="285" width="327" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Iteam price " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AM5-44-GRR" customClass="CustomTextField" customModule="windowShopperCalculator" customModuleProvider="target">
+                                <rect key="frame" x="24" y="285" width="327" height="40"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AM5-44-GRR" firstAttribute="top" secondItem="yiJ-bo-XIN" secondAttribute="bottom" constant="40" id="4m8-2L-lVr"/>
+                            <constraint firstItem="AM5-44-GRR" firstAttribute="top" secondItem="yiJ-bo-XIN" secondAttribute="bottom" constant="30" id="4m8-2L-lVr"/>
                             <constraint firstAttribute="bottom" secondItem="DoH-Ny-k1V" secondAttribute="bottom" id="DAI-Sn-Lwp"/>
+                            <constraint firstItem="AM5-44-GRR" firstAttribute="height" secondItem="yiJ-bo-XIN" secondAttribute="height" id="H7e-ht-3as"/>
                             <constraint firstItem="AM5-44-GRR" firstAttribute="width" secondItem="yiJ-bo-XIN" secondAttribute="width" id="Mpl-3g-5Ut"/>
                             <constraint firstItem="AM5-44-GRR" firstAttribute="leading" secondItem="yiJ-bo-XIN" secondAttribute="leading" id="RAx-9o-gVy"/>
                             <constraint firstItem="AM5-44-GRR" firstAttribute="trailing" secondItem="yiJ-bo-XIN" secondAttribute="trailing" id="UZt-iw-OKi"/>
@@ -59,6 +65,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="hourlyWage" destination="yiJ-bo-XIN" id="dxZ-Qz-3mZ"/>
+                        <outlet property="iteamPrice" destination="AM5-44-GRR" id="Ib3-fP-HrQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
