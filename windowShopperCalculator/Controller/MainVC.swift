@@ -9,10 +9,12 @@
 import UIKit
 
 class MainVC: UIViewController {
-
+    
     @IBOutlet weak var hourlyWage: CustomTextField!
     @IBOutlet weak var iteamPrice: CustomTextField!
     
+    @IBOutlet weak var resultLbl: UILabel!
+    @IBOutlet weak var hoursLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +27,29 @@ class MainVC: UIViewController {
         hourlyWage.inputAccessoryView = calBtn
         iteamPrice.inputAccessoryView = calBtn
         
-    }
-
-    @objc func calculate() {
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
         
     }
     
-
+    @objc func calculate() {
+        
+        if let hourlyWage = hourlyWage.text, let iteamprice = iteamPrice.text {
+            if let wagee = Double(hourlyWage), let price = Double(iteamprice) {
+                view.endEditing(true)
+                resultLbl.isHidden = false
+                hoursLbl.isHidden = true
+                resultLbl.text = "\(wage.getWage(forWage: wagee, forprice: price))"
+            }
+        }
+    }
+    
+    
+    @IBAction func clearButton(_ sender: Any) {
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
+        hourlyWage.text = ""
+        iteamPrice.text = ""
+    }
 }
 
