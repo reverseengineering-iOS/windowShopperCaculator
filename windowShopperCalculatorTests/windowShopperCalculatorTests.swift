@@ -24,10 +24,11 @@ class windowShopperCalculatorTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    func getHours() {
-    XCTAssert(wage.getWage(forWage: 55, forprice: 10000) == 182)
-    XCTAssert(wage.getWage(forWage: 55, forprice: 30000) == 546)
+    func testGetHours () {
+        XCTAssert(wage.getWage(forWage: 55, forprice: 10000) == 182)
+        XCTAssert(wage.getWage(forWage: 58, forprice: 30000) == 518)
     }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

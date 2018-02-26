@@ -38,7 +38,7 @@ class MainVC: UIViewController {
             if let wagee = Double(hourlyWage), let price = Double(iteamprice) {
                 view.endEditing(true)
                 resultLbl.isHidden = false
-                hoursLbl.isHidden = true
+                hoursLbl.isHidden = false
                 resultLbl.text = "\(wage.getWage(forWage: wagee, forprice: price))"
             }
         }
